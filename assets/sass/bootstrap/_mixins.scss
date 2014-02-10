@@ -115,6 +115,10 @@
 }
 
 // Drop shadows
+//
+// Note: Deprecated `.box-shadow()` as of v3.1.0 since all of Bootstrap's
+//   supported browsers that have box shadow capabilities now support the
+//   standard `box-shadow` property.
 @mixin box-shadow($shadow...) {
   -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
           box-shadow: $shadow;
@@ -150,10 +154,10 @@
       -ms-transform: rotate($degrees); // IE9 only
           transform: rotate($degrees);
 }
-@mixin scale($ratio, $ratio-y...) {
-  -webkit-transform: scale($ratio, $ratio-y);
-      -ms-transform: scale($ratio, $ratio-y); // IE9 only
-          transform: scale($ratio, $ratio-y);
+@mixin scale($scale-args...) {
+  -webkit-transform: scale($scale-args);
+      -ms-transform: scale($scale-args); // IE9 only
+          transform: scale($scale-args);
 }
 @mixin translate($x, $y) {
   -webkit-transform: translate($x, $y);
@@ -584,6 +588,30 @@
   }
 }
 
+// Contextual backgrounds
+// -------------------------
+// [converter] $parent hack
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color;
+  }
+  a#{$parent}:hover {
+    background-color: darken($color, 10%);
+  }
+}
+
+// Typography
+// -------------------------
+// [converter] $parent hack
+@mixin text-emphasis-variant($parent, $color) {
+  #{$parent} {
+    color: $color;
+  }
+  a#{$parent}:hover {
+    color: darken($color, 10%);
+  }
+}
+
 // Navbar vertical align
 // -------------------------
 // Vertically center elements in the navbar.
@@ -607,7 +635,9 @@
 // More easily include all the states for responsive-utilities.less.
 // [converter] $parent hack
 @mixin responsive-visibility($parent) {
-  #{$parent} { display: block !important; }
+  #{$parent} {
+    display: block !important;
+  }
   table#{$parent}  { display: table; }
   tr#{$parent}     { display: table-row !important; }
   th#{$parent},
@@ -616,10 +646,9 @@
 
 // [converter] $parent hack
 @mixin responsive-invisibility($parent) {
-    #{$parent},
-  tr#{$parent},
-  th#{$parent},
-  td#{$parent} { display: none !important; }
+  #{$parent} {
+    display: none !important;
+  }
 }
 
 
@@ -715,7 +744,7 @@
   }
 }
 @mixin make-md-column-push($columns) {
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-md-min) {
     left: percentage(($columns / $grid-columns));
   }
 }
@@ -856,7 +885,7 @@
     border-color: $border-color;
     background-color: $background-color;
   }
-  // Optional feedack icon
+  // Optional feedback icon
   .form-control-feedback {
     color: $text-color;
   }
@@ -892,17 +921,21 @@
 
 // [converter] $parent hack
 @mixin input-size($parent, $input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
-  #{$parent} { height: $input-height;
-  padding: $padding-vertical $padding-horizontal;
-  font-size: $font-size;
-  line-height: $line-height;
-  border-radius: $border-radius; }
+  #{$parent} {
+    height: $input-height;
+    padding: $padding-vertical $padding-horizontal;
+    font-size: $font-size;
+    line-height: $line-height;
+    border-radius: $border-radius;
+  }
+
   select#{$parent} {
     height: $input-height;
     line-height: $input-height;
   }
 
-  textarea#{$parent} {
+  textarea#{$parent},
+  select[multiple]#{$parent} {
     height: auto;
   }
 }
