@@ -38,12 +38,15 @@ class Roots_Walker_Comment extends Walker_Comment {
       call_user_func($args['end-callback'], $comment, $args, $depth);
       return;
     }
+    // Close ".media-body" <div> located in templates/comment.php, and then the comment's <li>
     echo "</div></li>\n";
   }
 }
 
-function roots_get_avatar($avatar) {
+function roots_get_avatar($avatar, $type) {
+  if (!is_object($type)) { return $avatar; }
+
   $avatar = str_replace("class='avatar", "class='avatar pull-left media-object", $avatar);
   return $avatar;
 }
-add_filter('get_avatar', 'roots_get_avatar');
+add_filter('get_avatar', 'roots_get_avatar', 10, 2);
