@@ -37,11 +37,11 @@ module.exports = function(grunt) {
     sass: {
       dev: {
         options: {
-          style: 'nested',
+          style: 'expanded',
           compass: true,
           // Source maps are available, but require Sass 3.3.0 to be installed
           // https://github.com/gruntjs/grunt-contrib-sass#sourcemap
-          sourcemap: true
+          sourcemap: false
         },
         files: {
           'assets/css/main.css': [
@@ -125,12 +125,12 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      less: {
+      sass: {
         files: [
           'assets/scss/*.scss',
           'assets/scss/**/*.scss'
         ],
-        tasks: ['scss:dev', 'autoprefixer:dev']
+        tasks: ['sass:dev', 'autoprefixer:dev']
       },
       js: {
         files: [
@@ -161,13 +161,13 @@ module.exports = function(grunt) {
   ]);
   grunt.registerTask('dev', [
     'jshint',
-    'less:dev',
+    'sass:dev',
     'autoprefixer:dev',
     'concat'
   ]);
   grunt.registerTask('build', [
     'jshint',
-    'less:build',
+    'sass:build',
     'autoprefixer:build',
     'uglify',
     'modernizr',
