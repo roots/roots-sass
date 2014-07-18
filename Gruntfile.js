@@ -173,16 +173,4 @@ module.exports = function(grunt) {
     'version'
   ]);
 
-
-  // Register tasks
-  grunt.registerTask('default', [
-    'clean',
-    'sass',
-    'uglify',
-    'version'
-  ]);
-  grunt.registerTask('dev', [
-    'watch'
-  ]);
-
 };
