@@ -61,7 +61,7 @@ Edit `lib/init.php` to setup navigation menus, post thumbnail sizes, post format
 
 Roots uses [Grunt](http://gruntjs.com/) for compiling SASS to CSS, checking for JS errors, live reloading, concatenating and minifying files, versioning assets, and generating lean Modernizr builds.
 
-If you'd like to use Bootstrap Sass, look at the [Roots Sass](https://github.com/roots/roots-sass) fork.
+If you'd like to use Bootstrap Less, look at the [Roots Less](https://github.com/roots/roots).
 
 ### Install Grunt
 
