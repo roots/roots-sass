@@ -39,9 +39,10 @@ module.exports = function(grunt) {
         options: {
           style: 'expanded',
           compass: true,
-          // Source maps are available, but require Sass 3.3.0 to be installed
+          // SASS source map
+          // To disable, set sourcemap to false
           // https://github.com/gruntjs/grunt-contrib-sass#sourcemap
-          sourcemap: false
+          sourcemap: true
         },
         files: {
           'assets/css/main.css': [
@@ -53,7 +54,10 @@ module.exports = function(grunt) {
         options: {
           style: 'compressed',
           compass: true,
-          sourcemap: false
+          // SASS source map
+          // To disable, set sourcemap to false
+          // https://github.com/gruntjs/grunt-contrib-sass#sourcemap
+          sourcemap: true
         },
         files: {
           'assets/css/main.min.css': [
