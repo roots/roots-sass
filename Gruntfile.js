@@ -41,7 +41,7 @@ module.exports = function(grunt) {
           compass: true,
           // Source maps are available, but require Sass 3.3.0 to be installed
           // https://github.com/gruntjs/grunt-contrib-sass#sourcemap
-          sourcemap: false
+          sourcemap: true
         },
         files: {
           'assets/css/main.css': [
@@ -64,11 +64,11 @@ module.exports = function(grunt) {
     },
     concat: {
       options: {
-        separator: ';',
+        separator: ';'
       },
       dist: {
         src: [jsFileList],
-        dest: 'assets/js/scripts.js',
+        dest: 'assets/js/scripts.js'
       },
     },
     uglify: {
@@ -125,7 +125,7 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      sass: {
+      less: {
         files: [
           'assets/scss/*.scss',
           'assets/scss/**/*.scss'
