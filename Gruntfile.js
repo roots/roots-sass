@@ -45,7 +45,7 @@ module.exports = function(grunt) {
         },
         files: {
           'assets/css/main.css': [
-            'assets/scss/main.scss'
+            'assets/sass/main.scss'
           ]
         }
       },
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
         },
         files: {
           'assets/css/main.min.css': [
-            'assets/scss/main.scss'
+            'assets/sass/main.scss'
           ]
         }
       }
@@ -127,8 +127,8 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: [
-          'assets/scss/*.scss',
-          'assets/scss/**/*.scss'
+          'assets/sass/*.scss',
+          'assets/sass/**/*.scss'
         ],
         tasks: ['sass:dev', 'autoprefixer:dev']
       },
