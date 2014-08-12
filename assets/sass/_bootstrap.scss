@@ -5,8 +5,8 @@
 // --------------------------------------------------
 
 // Variables
-@import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/_variables";
 @import "_variables"; // Bootstrap variable overrides and custom variables
+@import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/_variables";
 
 // Mixins: Utilities
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_hide-text";
