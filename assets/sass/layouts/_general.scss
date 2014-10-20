@@ -2,4 +2,9 @@
 .wrap { }
 
 // Main content area
-.main { }
+.main {
+  @include make-sm-column($main-sm-columns);
+  .sidebar-primary & {
+    @include make-sm-column($main-sm-columns - $sidebar-sm-columns);
+  }
+}
