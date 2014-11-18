@@ -3,6 +3,7 @@
 node_modules
 assets/vendor/*
 assets/css/main.css.map
+assets/css/main.min.css.map
 assets/css/*main*.css
 assets/js/*scripts*.js
 assets/js/vendor/modernizr.min.js
