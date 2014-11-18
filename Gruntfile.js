@@ -39,10 +39,6 @@ module.exports = function(grunt) {
         options: {
           style: 'expanded',
           compass: true,
-          // SASS source map
-          // To disable, set sourcemap to false
-          // https://github.com/gruntjs/grunt-contrib-sass#sourcemap
-          sourcemap: true
         },
         files: {
           'assets/css/main.css': [
@@ -54,10 +50,6 @@ module.exports = function(grunt) {
         options: {
           style: 'compressed',
           compass: true,
-          // SASS source map
-          // To disable, set sourcemap to false
-          // https://github.com/gruntjs/grunt-contrib-sass#sourcemap
-          sourcemap: true
         },
         files: {
           'assets/css/main.min.css': [
