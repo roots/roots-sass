@@ -12,7 +12,7 @@ Roots is a WordPress starter theme based on [HTML5 Boilerplate](http://html5boil
 
 ## Features
 
-* [Grunt](http://roots.io/using-grunt-for-wordpress-theme-development/) for compiling SASS to CSS, checking for JS errors, live reloading, concatenating and minifying files, versioning assets, and generating lean Modernizr builds
+* [Grunt](http://roots.io/using-grunt-for-wordpress-theme-development/) for compiling Sass to CSS, checking for JS errors, live reloading, concatenating and minifying files, versioning assets, and generating lean Modernizr builds
 * [Bower](http://bower.io/) for front-end package management
 * [HTML5 Boilerplate](http://html5boilerplate.com/)
   * The latest [jQuery](http://jquery.com/) via Google CDN, with a local fallback
@@ -58,7 +58,7 @@ Edit `lib/init.php` to setup navigation menus, post thumbnail sizes, post format
 
 ## Theme development
 
-Roots uses [Grunt](http://gruntjs.com/) for compiling SASS to CSS, checking for JS errors, live reloading, concatenating and minifying files, versioning assets, and generating lean Modernizr builds.
+Roots uses [Grunt](http://gruntjs.com/) for compiling Sass to CSS, checking for JS errors, live reloading, concatenating and minifying files, versioning assets, and generating lean Modernizr builds.
 
 If you'd like to use Bootstrap Less, look at the [Roots Less](https://github.com/roots/roots).
 
@@ -75,7 +75,7 @@ When completed, you'll be able to run the various Grunt commands provided from t
 
 ### Available Grunt commands
 
-* `grunt dev` — Compile SASS to CSS, concatenate and validate JS
+* `grunt dev` — Compile Sass to CSS, concatenate and validate JS
 * `grunt watch` — Compile assets when file changes are made
 * `grunt build` — Create minified assets that are used on non-development environments
 
